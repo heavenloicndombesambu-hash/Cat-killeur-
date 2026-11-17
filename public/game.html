@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT KILLEUR - Partie</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background: #17172b;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #map {
+      position: relative;
+      width: 90%;
+      height: 55vh;
+      margin: 15px auto;
+      background: #477b50;
+      border: 5px solid #b8a5ff;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    #cat {
+      position: absolute;
+      left: 45%;
+      top: 45%;
+      font-size: 38px;
+      transition: left 0.1s, top 0.1s;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: 60px 60px 60px;
+      justify-content: center;
+      gap: 8px;
+    }
+    button {
+      padding: 15px;
+      border: 0;
+      border-radius: 12px;
+      background: #8065ff;
+      color: white;
+      font-size: 20px;
+    }
+    .empty { visibility: hidden; }
+  </style>
+</head>
+<body>
+  <h1>🐱 CAT KILLEUR</h1>
+  <p>Explore la carte !</p>
+
+  <div id="map">
+    <div id="cat">🐱</div>
+  </div>
+
+  <div class="controls">
+    <button class="empty"> </button>
+    <button onclick="move(0,-5)">⬆️</button>
+    <button class="empty"> </button>
+    <button onclick="move(-5,0)">⬅️</button>
+    <button onclick="move(0,5)">⬇️</button>
+    <button onclick="move(5,0)">➡️</button>
+  </div>
+
+  <script>
+    let x = 45;
+    let y = 45;
+
+    function move(dx, dy) {
+      x = Math.max(0, Math.min(90, x + dx));
+      y = Math.max(0, Math.min(90, y + dy));
+
+      const cat = document.getElementById("cat");
+      cat.style.left = x + "%";
+      cat.style.top = y + "%";
+    }
+  </script>
+</body>
+</html>
+
