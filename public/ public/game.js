@@ -65,6 +65,4 @@ socket.on("disconnect", () => {
 });
 
 function showMessage(message) {
-  document.getElementById("message").textContent = message;
-}
-
+  document.getElementById("message").textContent = 
