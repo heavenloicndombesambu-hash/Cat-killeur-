@@ -1,1 +1,29 @@
 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT KILLEUR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="menu">
+    <h1>🐱 CAT KILLEUR 🐮</h1>
+    <p>Bienvenue dans le jeu !</p>
+
+    <input id="playerName" placeholder="Ton nom de joueur">
+    <input id="roomCode" placeholder="Code du salon">
+
+    <button onclick="joinGame()">Rejoindre une partie</button>
+    <button onclick="createRoom()">Créer un salon</button>
+
+    <p id="message">En attente...</p>
+    <div id="players"></div>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
